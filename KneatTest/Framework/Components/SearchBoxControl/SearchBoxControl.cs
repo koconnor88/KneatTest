@@ -13,10 +13,7 @@ namespace KneatTest.Framework.Components.SearchBoxControl
         public SearchBoxControl(IWebElement referenceElement) : base(referenceElement) { }
 
         public IWebElement SearchBoxElement => WrappedElement.FindElement(By.CssSelector("input[data-component*='search/destination/input']"));
-        //Todo 
-        //Input for sending keys
-        //Results container
-
+       
         protected IWebElement ResultsContainerElement => WrappedElement.FindElement(By.CssSelector("ul.c-autocomplete__list[role='listbox']"));
 
 
@@ -25,7 +22,7 @@ namespace KneatTest.Framework.Components.SearchBoxControl
             var wait = new WebDriverWait(WrappedDriver, TimeSpan.FromSeconds(3));
             SearchBoxElement.Clear();
             SearchBoxElement.SendKeys(searchTerm);
-            //wait for searchresults container to displayed
+            //wait for searchresults container to be displayed
             WaitForElementToBeDisplayed(By.CssSelector("ul.c-autocomplete__list[role='listbox']"));
 
 

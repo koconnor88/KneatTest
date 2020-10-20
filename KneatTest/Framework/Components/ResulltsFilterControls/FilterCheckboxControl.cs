@@ -35,7 +35,7 @@ namespace KneatTest.Framework.Components.ResulltsFilterControls
                     .SilentUntil(x => x.FindElements(By.CssSelector(".sr-usp-overlay")) != null);
 
                 AutomationWait<IWebDriver>.On(WrappedDriver)
-                    .UpTo(TimeSpan.FromMilliseconds(1500))
+                    .UpTo(TimeSpan.FromMilliseconds(3000))
                     .SilentUntil(x => x.FindElements(By.CssSelector(".sr-usp-overlay")) == null);
 
 

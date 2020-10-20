@@ -18,7 +18,7 @@ namespace KneatTest.Framework.Pages
         public override By PageLoadedElementLocator { get => By.CssSelector(".hotellist_wrap"); }
 
         
-        //Would create a filter section and results section class if creating a full framework
+        //Would create a filter section and results section class/pagepane if creating a full framework
         //For the purposes of this exercise this allows me to access them when required
         public List<BaseFilterControl> Filters => _driver.FindElements(By.CssSelector(".filterbox")).Where(y => y.Displayed)
             .Select(x => new BaseFilterControl(x)).ToList();

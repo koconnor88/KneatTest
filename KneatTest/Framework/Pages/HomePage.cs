@@ -16,6 +16,8 @@ namespace KneatTest.Framework.Pages
         public override string PageUri => "https://www.booking.com/";
 
         public override By PageLoadedElementLocator { get => By.CssSelector("div[data-component='search/destination/input']"); }
+
+        //Would make the entire search panel it's own class/pagepane if building full framework
         public SearchBoxControl DestinationSearchBox => new SearchBoxControl(_driver.FindElement(By.CssSelector("div[data-component='search/destination/input']")));
 
         public CalendarControl CalendarControl => new CalendarControl(_driver.FindElement(By.CssSelector(".xp__dates")));

@@ -13,6 +13,7 @@ namespace KneatTest.Framework.Components.ResultItemControl
 
         public IWebElement NameElement => WrappedElement.FindElement(By.CssSelector(".sr-hotel__name"));
 
+        //Only need the Name for the purposes of this exercise
         public string Name => NameElement.Text;
     }
 }
