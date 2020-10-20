@@ -51,10 +51,10 @@ namespace KneatTest.Steps
         public void WhenUserFiltersByAndSelectsTheFilter(string p0, string p1)
         {
             var filter = _resultsPage.Filters.FirstOrDefault(x => x.FilterTitle.ToLower().Contains(p0.ToLower()));
-            Assert.NotNull(filter, $"No {p1} section displayed");
+            Assert.NotNull(filter, $"No {p0} section displayed");
             var option = filter.Options.FirstOrDefault(x => x.Option.ToLower().Contains(p1.ToLower()));
             //sauna filter was not displayed in filter options randomly
-            Assert.NotNull(option, $"No filter option {p0} in {p1} section");
+            Assert.NotNull(option, $"No filter option {p1} in {p0} section");
             option.Selected = true;
         }
 
