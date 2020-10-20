@@ -50,13 +50,14 @@ namespace KneatTest.Steps
         [When(@"User filters by (.*) and selects the (.*) filter")]
         public void WhenUserFiltersByAndSelectsTheFilter(string p0, string p1)
         {
-            var filter = _resultsPage.Filters.FirstOrDefault(x => x.FilterTitle.Contains("Fun Things To Do"));
-
-            var option = filter.Options.FirstOrDefault(x => x.Option.Contains("Fitness cent"));
-
+            var filter = _resultsPage.Filters.FirstOrDefault(x => x.FilterTitle.ToLower().Contains(p0.ToLower()));
+            Assert.NotNull(filter, $"No {p1} section displayed");
+            var option = filter.Options.FirstOrDefault(x => x.Option.ToLower().Contains(p1.ToLower()));
+            //sauna filter was not displayed in filter options randomly
+            Assert.NotNull(option, $"No filter option {p0} in {p1} section");
             option.Selected = true;
         }
-        
+
 
         [Then(@"(.*) listed in the results = (.*)")]
         public void ThenListedInTheResults(string p0, string p1)
