@@ -15,21 +15,3 @@ Scenario: Search Result Filter Test
 	| Fun things To Do | Sauna  | George Hotel Limerick | False     |
 	| Star Rating      | 5 Star | The Savoy Hotel       | True      |
 	| Star Rating      | 5 Star | George Hotel Limerick | False     |
-
-#Scenario: Sauna Filter - negative
-#	Given User is on the booking.com homepage
-#	And searches for 'Limerick'
-#	When User filters by 'Fun Things To Do' and selects the 'Sauna' filter
-#	Then 'George Limerick Hotel' is not in the results
-#
-#Scenario: 5 star Filter - positive
-#	Given User is on the booking.com homepage
-#	And searches for 'Limerick'
-#	When User filters by 'Star Rating' and selects the '5 stars' filter
-#	Then 'The Savoy Hotel' is in the results
-#
-#Scenario: 5 star Filter - negative
-#	Given User is on the booking.com homepage
-#	And searches for 'Limerick'
-#	When User filters by 'Star Rating' and selects the '5 stars' filter
-#	Then 'George Limerick Hotel' is not in the results
